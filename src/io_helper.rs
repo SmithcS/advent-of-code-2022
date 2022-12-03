@@ -33,6 +33,21 @@ pub fn read_input_file_into_vector(input_file_name: &str) -> Vec<Vec<i32>> {
     file_lines
 }
 
+pub fn read_input_file_into_vector_string(input_file_name: &str) -> Vec<String> {
+    let file_path = format!("{INPUT_FILE_PATH_ROOT}/{input_file_name}");
+    let mut file_lines = Vec::new();
+
+    if let Ok(lines) = read_lines(file_path) {
+        for line in lines {
+            if let Ok(ip) = line {
+                file_lines.push(ip);
+            }
+        }
+    }
+
+    file_lines
+}
+
 fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<fs::File>>>
 where P: AsRef<Path>, {
     let file = fs::File::open(filename)?;
