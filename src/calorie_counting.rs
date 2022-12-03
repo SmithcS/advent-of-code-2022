@@ -1,4 +1,4 @@
-pub fn find_max_calories(calories: Vec<Vec<i32>>) -> i32 {
+pub fn find_max_calories(calories: &Vec<Vec<i32>>) -> i32 {
     let mut max_calories: i32 = 0;
 
     for calorie_vector in calories.iter() {
@@ -7,4 +7,13 @@ pub fn find_max_calories(calories: Vec<Vec<i32>>) -> i32 {
     }
 
     max_calories
+}
+
+pub fn find_top_3_max_calories(calories: &Vec<Vec<i32>>) -> i32 {
+    let mut calorie_totals: Vec<i32> = calories.iter()
+        .map(|calorie| calorie.iter().sum())
+        .collect();
+    
+    calorie_totals.sort_by(|a, b| b.cmp(a));
+    return (&calorie_totals[0..3]).iter().sum::<i32>();
 }
