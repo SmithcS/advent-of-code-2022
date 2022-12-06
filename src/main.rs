@@ -12,6 +12,8 @@ fn main() {
 
     // Day 2
     let game_strategy = io_helper::read_input_file_into_vector_string("day_2.txt");
-    let total_score = rock_paper_scissors::calculate_game_score(&game_strategy);
+    let total_score = rock_paper_scissors::calculate_game_score(&game_strategy, false);
+    let total_score_new_strat = rock_paper_scissors::calculate_game_score(&game_strategy, true);
     println!("Total score based on game_strategy: {total_score}");
+    println!("Total score based on game_strategy alt: {total_score_new_strat}");
 }
