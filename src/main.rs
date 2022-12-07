@@ -1,6 +1,7 @@
 mod io_helper;
 mod calorie_counting;
 mod rock_paper_scissors;
+mod day_3_rucksack_reorganization;
  
 fn main() {
     // Day 1
@@ -16,4 +17,10 @@ fn main() {
     let total_score_new_strat = rock_paper_scissors::calculate_game_score(&game_strategy, true);
     println!("Total score based on game_strategy: {total_score}");
     println!("Total score based on game_strategy alt: {total_score_new_strat}");
+
+    // Day 3
+    let rucksack_contents = io_helper::read_input_file_into_vector_string("day_3.txt");
+    let priority_value_sum = day_3_rucksack_reorganization::get_prirority_sum(&rucksack_contents);
+    let priority_value_sum_group_of_3 = day_3_rucksack_reorganization::get_prirority_sum_group_of_3(&rucksack_contents);
+    println!("{priority_value_sum_group_of_3:?}");
 }
