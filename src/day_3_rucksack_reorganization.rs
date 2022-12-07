@@ -1,5 +1,3 @@
-use std::collections::HashSet;
-
 pub fn get_prirority_sum(rucksacks: &Vec<String>) -> i32 {
     let mut dup_items = Vec::new();
 
