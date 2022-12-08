@@ -3,6 +3,7 @@ mod day_1_calorie_counting;
 mod day_2_rock_paper_scissors;
 mod day_3_rucksack_reorganization;
 mod day_4_camp_cleanup;
+mod day_5_supply_stacks;
  
 fn main() {
     // Day 1
@@ -30,4 +31,13 @@ fn main() {
     let num_pairs = day_4_camp_cleanup::count_pairs(&pairs);
     println!("{:?} {:?}", num_pairs.0, num_pairs.1);
 
+    let move_data = io_helper::read_input_file_into_vector_string("day_5.txt");
+    let arranged_crates = day_5_supply_stacks::top_stack_crates(&move_data);
+    let arranged_crates_multi_move = day_5_supply_stacks::top_stack_crates_multi_move(&move_data);
+    //println!("{:?}", arranged_crates);
+    //println!("{:?}", arranged_crates_multi_move);
+    println!();
+    for stack in arranged_crates_multi_move.iter() {
+        println!("{:?}", stack);
+    }
 }
