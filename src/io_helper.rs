@@ -4,7 +4,7 @@ use std::io::{self, BufRead};
 
 const INPUT_FILE_PATH_ROOT: &str = "/Users/smithsopp/Documents/programming/advent-of-code-2022/src/input_files/";
 
-pub fn read_input_file(input_file_name: &str) -> String {
+pub fn read_input_file_as_string(input_file_name: &str) -> String {
     let file_path = format!("{INPUT_FILE_PATH_ROOT}/{input_file_name}");
     return fs::read_to_string(file_path).expect("Unable to read the file");
 }

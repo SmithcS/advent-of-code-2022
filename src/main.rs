@@ -4,6 +4,7 @@ mod day_2_rock_paper_scissors;
 mod day_3_rucksack_reorganization;
 mod day_4_camp_cleanup;
 mod day_5_supply_stacks;
+mod day_6_tuning_trouble;
  
 fn main() {
     // Day 1
@@ -36,4 +37,11 @@ fn main() {
     let arranged_crates = day_5_supply_stacks::top_stack_crates(&move_data);
     let arranged_crates_multi_move = day_5_supply_stacks::top_stack_crates_multi_move(&move_data);
     println!("{:?} {:?}", arranged_crates, arranged_crates_multi_move);
+
+    // Day 6 
+    let datastream_buffer = io_helper::read_input_file_as_string("day_6.txt");
+    let start_of_packet = day_6_tuning_trouble::find_start_marker(&datastream_buffer, day_6_tuning_trouble::PACKET_WINDOW_SIZE);
+    let start_of_message = day_6_tuning_trouble::find_start_marker(&datastream_buffer, day_6_tuning_trouble::MESSAGE_WINDOW_SIZE);
+    println!("start of packer marker idx: {}", start_of_packet);
+    println!("start of message marker idx: {}", start_of_message);
 }
