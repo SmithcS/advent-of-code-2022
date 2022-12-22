@@ -6,6 +6,7 @@ mod day_4_camp_cleanup;
 mod day_5_supply_stacks;
 mod day_6_tuning_trouble;
 mod day_7_no_space_left_on_device;
+mod day_8_treetop_tree_house;
  
 fn main() {
     // Day 1
@@ -50,4 +51,10 @@ fn main() {
     let cmd_history = io_helper::read_input_file_into_vector_string("day_7.txt");
     let output = day_7_no_space_left_on_device::calc_total_size(&cmd_history);
     println!("{}", output);
+
+    // Day 8
+    let tree_heights = io_helper::read_input_file_as_vector_int("day_8.txt");
+    let visible_trees = day_8_treetop_tree_house::find_visible_trees(&tree_heights);
+    let max_scenic_score = day_8_treetop_tree_house::find_max_scenic_score(&tree_heights);
+    println!("visible trees: {}, max scenic score: {}", visible_trees, max_scenic_score);
 }
