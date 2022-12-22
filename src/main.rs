@@ -5,6 +5,7 @@ mod day_3_rucksack_reorganization;
 mod day_4_camp_cleanup;
 mod day_5_supply_stacks;
 mod day_6_tuning_trouble;
+mod day_7_no_space_left_on_device;
  
 fn main() {
     // Day 1
@@ -44,4 +45,9 @@ fn main() {
     let start_of_message = day_6_tuning_trouble::find_start_marker(&datastream_buffer, day_6_tuning_trouble::MESSAGE_WINDOW_SIZE);
     println!("start of packer marker idx: {}", start_of_packet);
     println!("start of message marker idx: {}", start_of_message);
+
+    // Day 7
+    let cmd_history = io_helper::read_input_file_into_vector_string("day_7.txt");
+    let output = day_7_no_space_left_on_device::calc_total_size(&cmd_history);
+    println!("{}", output);
 }
