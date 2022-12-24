@@ -82,7 +82,9 @@ pub fn find_max_scenic_score(tree_heights: &Vec<Vec<i32>>) -> usize {
     return max_scenic_score;
 }
 
-
+// This could likely be improved by memoizing the result of previous scenic score
+// calculations to save needing to calculate the left and top directions every
+// time (or right and bottom, depending on how the memoization grid is built).
 fn calc_scenic_score(x_pos: usize, y_pos: usize, tree_heights: &Vec<Vec<i32>>) -> usize {
     let mut scenic_score = 1; // Total scenic score
     let mut directional_scenic_score = 0; // Score in one direction, e.g. up, down, left, right

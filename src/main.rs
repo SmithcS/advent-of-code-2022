@@ -7,6 +7,7 @@ mod day_5_supply_stacks;
 mod day_6_tuning_trouble;
 mod day_7_no_space_left_on_device;
 mod day_8_treetop_tree_house;
+mod day_9_rope_bridge;
  
 fn main() {
     // Day 1
@@ -57,4 +58,9 @@ fn main() {
     let visible_trees = day_8_treetop_tree_house::find_visible_trees(&tree_heights);
     let max_scenic_score = day_8_treetop_tree_house::find_max_scenic_score(&tree_heights);
     println!("visible trees: {}, max scenic score: {}", visible_trees, max_scenic_score);
+
+    // Day 9
+    let rope_movements = io_helper::read_input_file_into_vector_string("day_9.txt");
+    let unique_positions = day_9_rope_bridge::calc_unique_tail_positions(&rope_movements, 10);
+    println!("unique tail positions: {}", unique_positions);
 }
