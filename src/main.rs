@@ -8,6 +8,7 @@ mod day_6_tuning_trouble;
 mod day_7_no_space_left_on_device;
 mod day_8_treetop_tree_house;
 mod day_9_rope_bridge;
+mod day_10_cathored_ray_tube;
  
 fn main() {
     // Day 1
@@ -63,4 +64,9 @@ fn main() {
     let rope_movements = io_helper::read_input_file_into_vector_string("day_9.txt");
     let unique_positions = day_9_rope_bridge::calc_unique_tail_positions(&rope_movements, 10);
     println!("unique tail positions: {}", unique_positions);
+
+    // Day 10
+    let signal_instructions = io_helper::read_input_file_into_vector_string("day_10.txt");
+    let signal_strength_sum = day_10_cathored_ray_tube::calc_signal_strength_sum(&signal_instructions);
+    println!("signal strength sum: {}", signal_strength_sum);
 }
